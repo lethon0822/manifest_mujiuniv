@@ -1,15 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: scg-app-service
+  name: mujiuniv-be_user
   namespace: app
+  labels:
+    app: mujiuniv-be_user
 spec:
   selector:
-    app: scg-app
+    app: mujiuniv-be_user
   ports:
     - name: http
       protocol: TCP
       port: 8080
       targetPort: 8080
-      nodePort: 30880
-  type: NodePort
+  type: ClusterIP
