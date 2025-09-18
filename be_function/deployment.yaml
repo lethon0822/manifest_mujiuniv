@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: mujiuniv-function
-        image: harbor.greenart.n-e.kr/mujiuniv/function:1
+        image: harbor.greenart.n-e.kr/mujiuniv/function:2
         ports:
           - containerPort: 8080
         volumeMounts:
