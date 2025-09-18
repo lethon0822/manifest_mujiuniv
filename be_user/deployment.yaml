@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mujiuniv-be_user-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mujiuniv-be_user
+  template:
+    metadata:
+      labels:
+        app: mujiuniv-be_user
+    spec:
+      containers:
+      - name: mujiuniv-be_user
+        image: harbor.greenart.n-e.kr/mujiuniv/be_user:1
+        ports:
+          - containerPort: 8080
+        volumeMounts:
+          - name: host-volume
+            mountPath: /home/download
+      volumes:
+        - name: host-volume
+          hostPath:
+            path: /home/green/download
+            type: DirectoryOrCreate      
+      imagePullSecrets:
+      - name: harbor-creds
+      serviceAccountName: spring-gateway
