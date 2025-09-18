@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mujiuniv-be_function-deployment
+  name: mujiuniv-function-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mujiuniv-be_function
+      app: mujiuniv-function
   template:
     metadata:
       labels:
-        app: mujiuniv-be_function
+        app: mujiuniv-function
     spec:
       containers:
-      - name: mujiuniv-be_function
-        image: harbor.greenart.n-e.kr/mujiuniv/be_function:1
+      - name: mujiuniv-function
+        image: harbor.greenart.n-e.kr/mujiuniv/function:1
         ports:
           - containerPort: 8080
         volumeMounts:

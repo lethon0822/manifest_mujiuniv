@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mujiuniv-be_function
+  name: mujiuniv-function
   namespace: app
   labels:
-    app: mujiuniv-be_function
+    app: mujiuniv-function
 spec:
   selector:
-    app: mujiuniv-be_function
+    app: mujiuniv-function
   ports:
     - name: http
       protocol: TCP
